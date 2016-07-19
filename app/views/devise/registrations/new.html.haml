@@ -1,0 +1,14 @@
+.row.login
+  .col.s12.m8.offset-m2.l6.offset-l3.sign-bg
+    %h1.text-center.login-title Sign up
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :email, required: true, autofocus: true
+        = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+        = f.input :password_confirmation, required: true
+      .form-actions
+        = f.button :submit, "Sign up"
+    .need-help
+      Already have an account? Please
+      = render "devise/shared/links"
