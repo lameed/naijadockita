@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :doctors
   devise_for :users
   get 'home/index'
+  resources :feeds
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'feeds#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
