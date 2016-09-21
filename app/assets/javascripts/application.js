@@ -10,12 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery.turbolinks
 //= require jquery
-//= require materialize-sprockets
-//= require materialize/extras/nouislider
 //= require bootstrap-sprockets
-
-
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

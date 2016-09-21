@@ -1,16 +1,33 @@
 .container
   .row
-    .col.s12.m4.l2
+    .col-sm-2
       .pm
-        %h2.text-center.login-title Avatar and links
-      %ul
-        %li
-          %a{:href => ""} About
-          %a{:href => ""} About
-          %a{:href => ""} About
+        = render 'layouts/user_info'
 
-    .col.s12.m4.l8
-      .pf
-        %h2.text-center.login-title Posts
-    .col.s12.m4.l2
+    .col-sm-6
+      .post-form
+        = render 'form'
+      .post
+        - @feeds.each do |feed|
+          .post-item
+            %p.feed-text= link_to feed.content, feed
+            = link_to (image_tag feed.image.url(:small)), feed
+            %p.username
+              Shared by
+              = feed.user.name
+
+              %i.fa.f-comments-o
+              = feed.comments.count
+            - if @feed.user.id == current_user.id
+              .text-center.edit-links
+              = link_to "Cancel", feeds_path
+              
+            - else
+              .text-center.edit-links
+              =link_to "Cancel", feeds_path
+
+
+
+
+    .col-sm-4
       %h2.text-center.login-title Events columns

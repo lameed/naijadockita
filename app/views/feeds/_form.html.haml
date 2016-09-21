@@ -1,0 +1,6 @@
+%h4.post-head Add new Post
+= simple_form_for @feed do |f|
+  = f.input :content, placeholder: "Compose new post..."
+  = f.input :image
+
+  = f.button :submit, "Add Post", class: "btn btn-large btn-primary"

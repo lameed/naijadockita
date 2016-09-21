@@ -1,14 +1,29 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+
   devise_for :doctors
   devise_for :users
   get 'home/index'
-  resources :feeds
+  resources :posts do
+    resources :comments
+  end
+
+  resources :feeds do
+  	# member do
+  	# 	get "like", to: "posts#upvote"
+  	# 	get "dislike", to: "posts#downvote"
+  	# end
+  	resources :comments
+  end
+
+  get ':name', to: 'profiles#show', as: :profile
+  get ':name/edit', to: 'profiles#edit', as: :edit_profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'feeds#index'
+  root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

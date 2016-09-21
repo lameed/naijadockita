@@ -1,124 +1,129 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "materialize";
-@import "materialize/extras/nouislider";
+@import "style";
 
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0
+}
 
-  main {
-    flex: 1 0 auto;
-  }
-
-.login {
-   padding-bottom: 50px;
-   padding-top: 20px;
-   margin-bottom: -20px !important;
- }
-
- .sign-bg {
-   background-color: rgba(250, 250, 250, 0.9);
-   padding-left: 30px !important;
-   padding-right: 30px !important;
-   padding-bottom: 28px !important;
- }
-.login-bg {
-  background:url('bg.jpg') !important;
-  background-position: center;
+// Registration style
+.registration-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('background1.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
-.form-signin
-{
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-}
-.form-signin .form-signin-heading, .form-signin .checkbox
-{
-    margin-bottom: 10px;
-}
-.form-signin .checkbox
-{
-    font-weight: normal;
-}
-.form-signin .form-control
-{
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.form-signin .form-control:focus
-{
-    z-index: 2;
-}
-.form-signin input[type="text"]
-{
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.form-signin input[type="password"]
-{
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-.account-wall
-{
-    margin-top: 20px;
-    padding: 40px 0px 20px 0px;
-    background-color: #f7f7f7;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.login-title
-{
-    color: #555;
-    font-size: 18px;
-    font-weight: 400;
-    display: block;
+// Login style`
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
 }
 
-.need-help
-{
-    margin-top: 20px;
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('background2.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.help-link {
-  padding: 10px;
-  background-color: #337ab7 !important;
-  color: #fff;
-  height: 40px;
+.panel {
+  border-radius: 8px;
 }
 
-.new-account
-{
-    display: block;
-    margin-top: 10px;
-}
-.pm {
-
-  height:250px;
-  background: #fff;
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
 }
 
-.pf {
-
-  height:250px;
-  background: #fff;
+.navbar {
+  margin-bottom: 0px;
 }
-.container {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 92% !important;
+
+.alert {
+  margin-bottom: 0px;
+}
+
+#image-preview {
+  margin: 0px auto;
+}
+
+#post_image {
+  padding: 1em;
+  margin: 0px auto;
+}
+
+
+#paginator {
+  color: #4090DB;
+  height: 120px;
+  width: 120px;
+  margin: 60px auto 40px;
+  position: relative;
+  display: table;
+  border: 2px solid #4090DB;
+  border-radius: 50%;
+  :hover {
+    border: 1px solid #2D6DA8;
+    border-radius: 50%;
+  }
+}
+
+#load_more {
+  display: table-cell;
+  font-size: 12px;
+  padding: 0px 9px;
+  vertical-align: middle;
+  text-decoration: none;
+  a :hover {
+    color: #2D6DA8;
+  }
+}
+
+.comments {
+  .paginator {
+    margin: 0.5em;
+    .more-comments {
+      color: #A5A7AA;
+    }
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eee;
+  color: #eee;
+  a {
+    color: #ccc;
+    &:hover {
+      color: #eee;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+
 }

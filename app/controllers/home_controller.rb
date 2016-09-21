@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
+  layout 'main_layout'
+  # before_action :authenticate_user!
   def index
   end
 end
