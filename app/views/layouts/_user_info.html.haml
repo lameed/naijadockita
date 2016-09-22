@@ -1,0 +1,17 @@
+.posts-wrapper
+  .row.profile-header
+    .col-md-12
+      .img-circle
+        = profile_avatar_select(current_user)
+    .col-md-12
+      .user-name-and-follow
+        %h3.profile-user-name
+          = current_user.name
+        %span
+          = link_to 'Edit Profile', edit_profile_path(current_user.name),
+                                      class: 'btn edit-button'
+      %p.profile-bio
+        = current_user.bio
+      .user-statistics
+        %p
+          = pluralize current_user.posts.count, 'post'

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :posts do
     resources :comments
+    member do
+      get 'like'
+      get 'unlike'
+    end
   end
 
   resources :feeds do
@@ -18,6 +22,7 @@ Rails.application.routes.draw do
 
   get ':name', to: 'profiles#show', as: :profile
   get ':name/edit', to: 'profiles#edit', as: :edit_profile
+  patch ':name/edit', to: 'profiles#update', as: :update_profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

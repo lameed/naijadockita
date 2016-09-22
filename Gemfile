@@ -14,6 +14,7 @@ gem "haml-rails", "~> 0.9"
 gem 'paperclip', '~> 4.2.1'
 gem 'kaminari', '~> 0.16.3'
 gem 'jquery-turbolinks'
+gem 'acts_as_votable', '~> 0.10.0'
 
 
 # Use Uglifier as compressor for JavaScript assets
